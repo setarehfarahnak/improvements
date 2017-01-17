@@ -1,1 +1,22 @@
 //resusable part code
+
+.header{
+  border:1px solid $main-color;
+  &-title{
+    color:$main-color;
+    padding: 10px;
+  }
+}
+.imporovments{
+  border:1px solid $main-color;
+  float:left;
+  width:498px;
+  height: 400px;
+
+}
+.teams{
+  border:1px solid $main-color;
+  float:right;
+  width:498px;
+  height: 400px;
+}

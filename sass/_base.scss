@@ -1,2 +1,7 @@
 // This works like reset.
 // We should only have html tags and not put any class or id selectors here
+body{
+  margin:0;
+  padding:0;
+  @include default-background-color($main-color);
+}

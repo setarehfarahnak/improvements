@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #4374c3; }
+
+.container {
+  background: white;
+  height: 500px;
+  width: 1000px;
+  margin: 100px auto 200px auto;
+  border-radius: 20px; }
+
+.header {
+  border: 1px solid #4374c3; }
+  .header-title {
+    color: #4374c3;
+    padding: 10px; }
+
+.imporovments {
+  border: 1px solid #4374c3;
+  float: left;
+  width: 498px;
+  height: 400px; }
+
+.teams {
+  border: 1px solid #4374c3;
+  float: right;
+  width: 498px;
+  height: 400px; }
+
+/*# sourceMappingURL=styles.css.map */

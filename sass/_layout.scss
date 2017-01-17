@@ -2,3 +2,11 @@
 //use l. as a prefix like
 // l.left
 //   float:left
+
+.container{
+  @include default-background-color($white);
+  height: 500px;
+  width:1000px;
+  margin: 100px auto 200px auto;
+  border-radius: 20px;
+}
