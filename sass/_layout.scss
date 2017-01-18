@@ -9,4 +9,7 @@
   width:1000px;
   margin: 100px auto 200px auto;
   border-radius: 20px;
+  @media screen and (max-width:800px ){
+    height: auto;
+  }
 }
