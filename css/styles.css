@@ -5821,11 +5821,23 @@ body {
     .container {
       height: auto; } }
 
-.header {
-  border: 1px solid #4374c3; }
-  .header-title {
-    color: #4374c3;
-    padding: 10px; }
+.header-title {
+  color: #4374c3;
+  padding: 10px; }
+.header .btn {
+  padding: 10px;
+  background: #4374c3;
+  color: white;
+  margin-top: 20px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  outline: 0; }
+
+.modal-header {
+  border: 0; }
+
+.modal-body textarea, .modal-body select, .modal-body button {
+  margin-top: 10px; }
 
 .imporovments {
   border: 1px solid #4374c3;

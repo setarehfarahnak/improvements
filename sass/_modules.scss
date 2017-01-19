@@ -1,11 +1,28 @@
 //resusable part code
 
 .header{
-  border:1px solid $main-color;
   &-title{
     color:$main-color;
     padding: 10px;
   }
+  .btn{
+    padding: 10px;
+    @include default-background-color($main-color);
+    color:$white;
+    margin-top: 20px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    outline: 0;
+  }
+}
+.modal-header{
+  border:0;
+}
+.modal-body{
+  textarea,select,button{
+    margin-top: 10px;
+  }
+
 }
 .imporovments{
   border:1px solid $main-color;
