@@ -1,12 +1,4 @@
 <?php
-echo 'hej';
-$localhost = "localhost";
-$dbname = "improvements";
-$user = "root";
-$pass = "root";
-
-$pdo = new PDO("mysql:charset=utf8; host=$localhost; dbname=$dbname", $user, $pass);
-
 
 if (is_ajax()) {
     if (isset($_POST["improvment"]) && !empty($_POST["improvment"]) && isset($_POST["team"]) && !empty($_POST["team"])) { //Checks if action value exists
@@ -21,15 +13,31 @@ function is_ajax() {
 
 function improvement_create(){
 
-//    $sql = "INSERT INTO $dbname ('improv_content','improv_team')
-//            VALUES (\"".$_POST['improvment']."\",
-//                     \"".$_POST['team']."\",
-//                     )";
-//
-//
-//    $stmt = $pdo->query($sql);
+    // TODO: DB connection/files doesnt work when its outside why it should be inside function??
+    require ('../includes/setting.php');
+    require ('../includes/dbcon.php');
 
-    $return = $_POST;
+
+    $improvement = $_POST['improvment'];
+    $team = $_POST['team'];
+
+    $sql = "insert into content(improv_content,improv_team) VALUES ('$improvement','$team')";
+    $stmt = $pdo->query($sql);
+    improvement_collect();
+}
+
+function improvement_collect(){
+    // TODO: DB connection/files doesnt work when its outside why it should be inside function??
+    require ('../includes/setting.php');
+    require ('../includes/dbcon.php');
+
+    $sql = "select * from content";
+    $stmt = $pdo->query($sql);
+    $return = [];
+    foreach($stmt as $row){
+        $return[] = $row;
+    }
     $return["json"] = json_encode($return);
     echo json_encode($return);
 }
+
