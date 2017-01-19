@@ -7,15 +7,16 @@ if (is_ajax()) {
 }
 
 //Function to check if the request is an AJAX request
-function is_ajax() {
+function is_ajax()
+{
     return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
 }
 
-function improvement_create(){
-
+function improvement_create()
+{
     // TODO: DB connection/files doesnt work when its outside why it should be inside function??
-    require ('../includes/setting.php');
-    require ('../includes/dbcon.php');
+    require('../includes/setting.php');
+    require('../includes/dbcon.php');
 
 
     $improvement = $_POST['improvment'];
@@ -23,21 +24,13 @@ function improvement_create(){
 
     $sql = "insert into content(improv_content,improv_team) VALUES ('$improvement','$team')";
     $stmt = $pdo->query($sql);
-    improvement_collect();
-}
-
-function improvement_collect(){
-    // TODO: DB connection/files doesnt work when its outside why it should be inside function??
-    require ('../includes/setting.php');
-    require ('../includes/dbcon.php');
 
     $sql = "select * from content";
     $stmt = $pdo->query($sql);
     $return = [];
-    foreach($stmt as $row){
-        $return[] = $row;
+    if ($stmt) {
+        $return = $stmt->fetchAll();
     }
     $return["json"] = json_encode($return);
     echo json_encode($return);
 }
-

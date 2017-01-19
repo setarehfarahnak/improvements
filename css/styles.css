@@ -5840,11 +5840,15 @@ body {
   margin-top: 10px; }
 
 .imporovments {
-  border: 1px solid #4374c3;
+  margin-top: 10px;
   float: left;
-  height: 400px; }
+  height: 400px;
+  overflow-y: auto; }
+  .imporovments-content {
+    box-shadow: 2px 2px 2px 2px #DCDCDC; }
 
 .teams {
+  margin-top: 10px;
   border: 1px solid #4374c3;
   float: right;
   height: 400px; }
