@@ -1,12 +1,21 @@
 $ = jQuery;
+
 $(function(){
 
     $.getJSON("function/improvement_get.php",
         function (vals) {
-            var data = JSON.parse(vals['json']);
-            console.log(data.length);
+            var dataArray = JSON.parse(vals);
+            var data = dataArray['json'];
             for (i = 0; i < data.length; i++) {
                 $('<p>').html(data[i]['improv_content']+' BY team --> '+data[i]['improv_team']).attr('class','imporovments-content').appendTo('.imporovments');
+            }
+            var teamList = dataArray['team'];
+            console.log(teamList);
+
+
+
+            for (var team in teamList) {
+                $('<p>').html(team +' BY team --> '+ teamList[team].length).attr('class','teams-list').appendTo('.teams');
             }
     });
 
@@ -25,8 +34,7 @@ $(function(){
             data: data,
             success: function (data) {
                 document.getElementById('improvContent').value = null;
-                console.log(JSON.parse(data["json"]));
-                improvement_get(JSON.parse(data["json"]));
+                improvement_get(JSON.parse(data));
             }
         });
         return false;
@@ -36,8 +44,15 @@ $(function(){
 
 function improvement_get(data){
     $('.imporovments-content').remove();
-    for (i = 0; i < data.length; i++) {
-        $('<p>').html(data[i]['improv_content']+' BY team --> '+data[i]['improv_team']).attr('class','imporovments-content').appendTo('.imporovments');
+    var improvments_list = data['json'];
+    for (i = 0; i < improvments_list.length; i++) {
+        $('<p>').html(improvments_list[i]['improv_content']+' BY team --> '+improvments_list[i]['improv_team']).attr('class','imporovments-content').appendTo('.imporovments');
     }
+    $('.teams-list').remove();
+    var team_list = data['team'];
+    for (var team in team_list) {
+        $('<p>').html(team +' BY team --> '+ team_list[team].length).attr('class','teams-list').appendTo('.teams');
+    }
+
 }
 

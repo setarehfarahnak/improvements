@@ -46,9 +46,7 @@
     </div>
     <div class="row">
         <div class="imporovments col-md-6 col-sm-6 col-xs-12"></div>
-        <div class="teams col-md-6 col-sm-6 col-xs-12">
-            <h3 class="teams-title">Teams</h3>
-        </div>
+        <div class="teams col-md-6 col-sm-6 col-xs-12"></div>
     </div>
 </div>
 </body>

@@ -35,8 +35,11 @@
 }
 .teams{
   margin-top: 10px;
-  border:1px solid $main-color;
   float:right;
   //width:498px;
   height: 400px;
+  border-left: solid 2px $shadow;
+  &-list{
+    box-shadow: 2px 2px 2px 2px $shadow;
+  }
 }

@@ -30,7 +30,14 @@ function improvement_create()
     $return = [];
     if ($stmt) {
         $return = $stmt->fetchAll();
+        $results = [];
+        for ($i = 0; $i < count($return); $i++) {
+            $result = $return[$i];
+            $team = $return[$i]['improv_team'];
+            $results[$team][] = $result;
+        }
     }
-    $return["json"] = json_encode($return);
-    echo json_encode($return);
+    $return = array('json' => $return, 'team' =>$results);
+    $return_response = json_encode($return);
+    echo json_encode($return_response);
 }

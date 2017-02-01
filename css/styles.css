@@ -5849,8 +5849,10 @@ body {
 
 .teams {
   margin-top: 10px;
-  border: 1px solid #4374c3;
   float: right;
-  height: 400px; }
+  height: 400px;
+  border-left: solid 2px #DCDCDC; }
+  .teams-list {
+    box-shadow: 2px 2px 2px 2px #DCDCDC; }
 
 /*# sourceMappingURL=styles.css.map */
